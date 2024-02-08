@@ -1,0 +1,65 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   
+}
+body{
+   background-color: rgb(3, 3, 34);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container{
+   width: 400px;
+   height: 400px;
+   text-align: center;
+   background-color: hsl(245, 95%, 48%);
+   color: #fff;
+   border-radius:5px ;
+   position: relative; 
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.elemento-text{
+   margin: 1rem;
+   align-items: center;
+}
+
+.container .elemento-text h1{
+   font-size: 30pt;
+}
+
+.container .elemento-text p{
+   font-size: 15pt;
+   padding: .5rem;
+}
+
+.container::before, .container::after{
+   content: " ";
+   position: absolute;
+   z-index: -1;
+   width: calc(100% + 30px);
+   height: calc(100% + 30px);
+   background: linear-gradient(45deg, #eaff00,rgb(21, 0, 251),rgb(255, 0, 0),#eaff00,rgb(255, 0, 0),rgb(21, 0, 251),rgb(255, 0, 0),#eaff00,rgb(0, 0, 255));
+   background-size: 300%;
+   border-radius: 8px;
+   animation: animarBorda 10s linear alternate infinite;
+}
+
+@keyframes animarBorda{
+   0%{
+     background-position: 0%;
+   }
+   100%{
+     background-position: 300%;
+   }
+}
+
+.container::after{
+   filter: blur(50px);
+}
